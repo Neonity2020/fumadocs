@@ -103,8 +103,12 @@ export function DocsLayout({
               {nav.title}
             </Link>
             <div className="flex-1">{nav.children}</div>
-            {slots('sm', searchToggle, <SearchToggle hideIfDisabled />)}
-            <NavbarSidebarTrigger className="-me-2 md:hidden" />
+            {slots(
+              'sm',
+              searchToggle,
+              <SearchToggle size="icon-sm" className="p-2" hideIfDisabled />,
+            )}
+            <NavbarSidebarTrigger className="-me-2 p-2 md:hidden" />
           </Navbar>,
         )}
         <main
@@ -276,4 +280,3 @@ export function DocsLayoutSidebarFooter({
 }
 
 export { CollapsibleControl, Navbar, NavbarSidebarTrigger, type LinkItemType };
-export { getSidebarTabsFromOptions } from './docs/shared';
